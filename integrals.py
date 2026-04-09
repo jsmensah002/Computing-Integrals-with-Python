@@ -50,7 +50,7 @@ integral, integral_error = dblquad(integrand, 0, np.pi, lower_y, upper_y)
 # print(integral_error)
 
 
-### Integration (Third Integrals)
+### Integration (Triple Integrals)
 # cos(x) * sin(y) * z  ; x bounds (0,pi), y bounds (0, x**2), z bounds (x, x**3)
 integrand = lambda z, y, x: np.cos(x) * np.sin(y) * z
 lower_y = lambda x: 0
