@@ -1,1 +1,1 @@
-Computing Integrals with Python. 
+Computing Single, Double, and Triple Integrals with Python. 
