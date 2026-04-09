@@ -33,7 +33,7 @@ integral, integral_error = dblquad(integrand, 0, 2, lower_y, upper_y)
 # print(integral)
 # print(integral_error)
 
-# e^(x+y) ; first integral bounds (0,1), second integral bounds ( -x, x**2)
+# e^(x+y) ; first integral bounds (0,1), second integral bounds (-x, x**2)
 integrand = lambda x,y: np.exp(x+y) 
 lower_y = lambda x: -x  # lower y bound
 upper_y = lambda x: x**2   # upper y bound
@@ -41,7 +41,7 @@ integral, integral_error = dblquad(integrand, 0, 1, lower_y, upper_y)
 # print(integral)
 # print(integral_error)
 
-# cos(x) * sin(y) ; first integral bounds (0,pi), second integral bounds ( 0, x**2)
+# cos(x) * sin(y) ; first integral bounds (0,pi), second integral bounds (0, x**2)
 integrand = lambda x,y: np.cos(x) * np.sin(y)  
 lower_y = lambda x: 0  # lower y bound
 upper_y = lambda x: x**2   # upper y bound
