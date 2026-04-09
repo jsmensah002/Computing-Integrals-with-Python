@@ -1,2 +1,1 @@
-# Computing-Integrals-with-Python
-Single and Double Integrals
+Computing Integrals with Python using quad and dblquad
