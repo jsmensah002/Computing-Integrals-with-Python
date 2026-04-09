@@ -47,3 +47,17 @@ upper_y = lambda x: x**2   # upper y bound
 integral, integral_error = dblquad(integrand, 0, np.pi, lower_y, upper_y) 
 # print(integral)
 # print(integral_error)
+
+
+### Integration (Third Integrals)
+from scipy.integrate import tplquad
+
+# cos(x) * sin(y) * z  ; x bounds (0,pi), y bounds (0, x**2), z bounds (x, x**3)
+integrand = lambda z, y, x: np.cos(x) * np.sin(y) * z
+lower_y = lambda x: 0
+upper_y = lambda x: x**2
+lower_z = lambda x, y: x
+upper_z = lambda x, y: x**3 
+integral, integral_error = tplquad(integrand, 0, np.pi, lower_y, upper_y, lower_z, upper_z)
+# print(integral)
+# print(integral_error)
