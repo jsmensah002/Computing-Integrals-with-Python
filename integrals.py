@@ -1,20 +1,49 @@
 ## CALCULUS
-# Integration (Single Integrals)
-# x**2 * np.sin(2*x) * np.exp(-x)  # integral from 0 to 1
-
 from scipy.integrate import quad
+from scipy.integrate import dblquad
 import numpy as np
-integrand = lambda x: x**2 * np.sin(x) * np.exp(-x)
-integral, integral_error = quad(integrand, 0, 1)   # 0 and 1 are the bounds
+
+### Integration (Single Integrals)
+# x³ * cos(x) dx  # integral from 0 to π
+integrand = lambda x: x**3 * np.cos(x)
+integral, integral_error = quad(integrand, 0, np.pi)   
 # print(integral)
 # print(integral_error)
 
-# Integration (Double Integrals)
-# np.sin(x+y)**2 ; first integral bounds (0,1), second integral bounds ( -x, x**2)
-from scipy.integrate import dblquad
-integrand = lambda x,y: np.sin(x+y**2)  
+# e^(-x²) * x  # integral from 0 to 2
+integrand = lambda x: np.exp(-x**2) * x
+integral, integral_error = quad(integrand, 0, 2)   
+# print(integral)
+# print(integral_error)
+
+# x * ln(x)  # integral from 1 to 3
+integrand = lambda x: x * np.log(x)
+integral, integral_error = quad(integrand, 1, 3)   
+# print(integral)
+# print(integral_error)
+
+
+### Integration (Double Integrals)
+# x²y dx ; first integral bounds (0,2), second integral bounds (0, x)
+integrand = lambda x,y: x**2 * y 
+lower_y = lambda x: 0  # lower y bound
+upper_y = lambda x: x   # upper y bound
+integral, integral_error = dblquad(integrand, 0, 2, lower_y, upper_y) 
+# print(integral)
+# print(integral_error)
+
+# e^(x+y) ; first integral bounds (0,1), second integral bounds ( -x, x**2)
+integrand = lambda x,y: np.exp(x+y) 
 lower_y = lambda x: -x  # lower y bound
 upper_y = lambda x: x**2   # upper y bound
 integral, integral_error = dblquad(integrand, 0, 1, lower_y, upper_y) 
+# print(integral)
+# print(integral_error)
+
+# cos(x) * sin(y) ; first integral bounds (0,pi), second integral bounds ( 0, x**2)
+integrand = lambda x,y: np.cos(x) * np.sin(y)  
+lower_y = lambda x: 0  # lower y bound
+upper_y = lambda x: x**2   # upper y bound
+integral, integral_error = dblquad(integrand, 0, np.pi, lower_y, upper_y) 
 # print(integral)
 # print(integral_error)
