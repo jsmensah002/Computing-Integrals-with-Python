@@ -32,7 +32,7 @@ integral, integral_error = quad(integrand, lower_x, upper_x)
 
 ### Integration (Double Integrals)
 # x²y dx ; first integral bounds (0,2), second integral bounds (0, x)
-integrand = lambda x,y: x**2 * y 
+integrand = lambda y, x: x**2 * y 
 lower_x = 0
 upper_x = 2
 lower_y = lambda x: 0  # lower y bound
@@ -42,7 +42,7 @@ integral, integral_error = dblquad(integrand, lower_x, upper_x, lower_y, upper_y
 # print(integral_error)
 
 # e^(x+y) ; first integral bounds (0,1), second integral bounds (-x, x**2)
-integrand = lambda x,y: np.exp(x+y) 
+integrand = lambda y, x: np.exp(x+y) 
 lower_x = 0
 upper_x = 1
 lower_y = lambda x: -x  # lower y bound
@@ -52,7 +52,7 @@ integral, integral_error = dblquad(integrand, lower_x, upper_x, lower_y, upper_y
 # print(integral_error)
 
 # cos(x) * sin(y) ; first integral bounds (0,pi), second integral bounds (0, x**2)
-integrand = lambda x,y: np.cos(x) * np.sin(y)  
+integrand = lambda y, x: np.cos(x) * np.sin(y)  
 lower_x = 0
 upper_x = np.pi
 lower_y = lambda x: 0  # lower y bound
